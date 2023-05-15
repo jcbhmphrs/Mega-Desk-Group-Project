@@ -33,6 +33,9 @@ namespace Mega_Desk_Group_Project
             Desk desk = new Desk(deskMaterial.Text, int.Parse(deskWidth.Text), int.Parse(deskDepth.Text), int.Parse(deskDrawerCount.Text));
             DeskQuote deskQuote = new DeskQuote(desk, customerName.Text, rushOrder.Text);
 
+            //add object to list
+            _mainMenu.deskQuoteList.Add(deskQuote);
+
             //Save DeskQuote to Json file
             SaveToJson(deskQuote);
             
@@ -45,8 +48,15 @@ namespace Mega_Desk_Group_Project
 
 
         public void SaveToJson(DeskQuote deskQuote)
-        {
-           
+        {        
+            using (StreamWriter file = new StreamWriter("AllQuotes.json"))
+            {
+                foreach(DeskQuote quote in _mainMenu.deskQuoteList)
+                {
+                    var serializedQuote = JsonConvert.SerializeObject(quote);
+                    file.WriteLine(serializedQuote);
+                }
+            }
         }
 
 

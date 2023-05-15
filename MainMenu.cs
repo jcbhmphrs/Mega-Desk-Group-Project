@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +8,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft;
+using System.IO;
 
 namespace Mega_Desk_Group_Project
 {
     public partial class MainMenu : Form
     {
+        public List<DeskQuote> deskQuoteList = new List<DeskQuote>();
+
+
         public MainMenu()
         {
             InitializeComponent();
+            var savedQuotes = File.ReadAllLines("AllQuotes.json");
+            foreach (var quote in savedQuotes)
+            {
+                DeskQuote quoteObj = JsonConvert.DeserializeObject<DeskQuote>(quote);
+                deskQuoteList.Add(quoteObj);
+            }
+
         }
 
 
