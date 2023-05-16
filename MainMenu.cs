@@ -50,5 +50,12 @@ namespace Mega_Desk_Group_Project
         {
             Application.Exit();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ViewAllQuotes viewAllQuotes = new ViewAllQuotes(this, deskQuoteList);
+            viewAllQuotes.Show();
+            this.Hide();
+        }
     }
 }

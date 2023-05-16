@@ -31,7 +31,7 @@ namespace Mega_Desk_Group_Project
         private void btnGetQuote_Click(object sender, EventArgs e)
         {
             Desk desk = new Desk(deskMaterial.Text, int.Parse(deskWidth.Text), int.Parse(deskDepth.Text), int.Parse(deskDrawerCount.Text));
-            DeskQuote deskQuote = new DeskQuote(desk, customerName.Text, rushOrder.Text);
+            DeskQuote deskQuote = new DeskQuote(desk, customerName.Text.ToUpper(), rushOrder.Text);
 
             //add object to list
             _mainMenu.deskQuoteList.Add(deskQuote);
