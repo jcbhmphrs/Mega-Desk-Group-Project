@@ -31,14 +31,11 @@ namespace Mega_Desk_Group_Project
             foreach (DeskQuote quote in quoteList) 
             {
                 // Compile the object data into string.
-                string fullQuote = $"{quote.Date.ToShortDateString()} {quote.CustomerName} | Width = {quote.Desk.Width} Depth = {quote.Desk.Depth} Drawers = {quote.Desk.DrawerCount} | ${quote.Price}";
+                string fullQuote = $"{quote.Date.ToShortDateString()} {quote.CustomerName} | Order:{quote.RushOrder} | ${quote.Price}";
                 
                 dispAllQuotesBox.Items.Add(fullQuote);
             }
         }
-
-   
-
 
         private void ViewAllQuotes_FormClosed(object sender, FormClosedEventArgs e)
         {
