@@ -17,7 +17,6 @@ namespace Mega_Desk_Group_Project
         public SearchQuotes(MainMenu mainMenu, List<DeskQuote> quoteList)
         {
             InitializeComponent();
-            this.Location = _mainMenu.Location;
             _mainMenu = mainMenu;
             _quoteList = quoteList;
 
