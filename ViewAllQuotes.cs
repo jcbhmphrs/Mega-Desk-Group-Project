@@ -31,7 +31,7 @@ namespace Mega_Desk_Group_Project
             foreach (DeskQuote quote in quoteList) 
             {
                 // Compile the object data into string.
-                string fullQuote = $"{quote.Date.ToShortDateString()} {quote.CustomerName} | Order:{quote.RushOrder} | ${quote.Price}";
+                string fullQuote = $"{quote.Date.ToShortDateString()} {quote.CustomerName} | Order: {quote.RushOrder} | ${quote.Price}";
                 
                 dispAllQuotesBox.Items.Add(fullQuote);
             }
