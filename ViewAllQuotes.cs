@@ -21,21 +21,7 @@ namespace Mega_Desk_Group_Project
             _mainMenu = mainMenu;
             _quoteList = quoteList;
             dispQuotesBox.DataSource = _quoteList;
-            //SetUpDisplay(_quoteList);
         }
-
-        /*private void SetUpDisplay(List<DeskQuote> quoteList) 
-        {
-            // Create a loop that pulls the info from
-            // each object of the list.
-            foreach (DeskQuote quote in quoteList) 
-            {
-                // Compile the object data into string.
-                string fullQuote = $"{quote.Date.ToShortDateString()} {quote.CustomerName} | Order: {quote.RushOrder} | ${quote.Price}";
-
-                dispQuotesBox.DataSource = (fullQuote);
-            }
-        }*/
 
         private void ViewAllQuotes_FormClosed(object sender, FormClosedEventArgs e)
         {
