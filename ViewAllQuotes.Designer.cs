@@ -39,14 +39,13 @@
             // 
             this.dispAllQuotesBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dispAllQuotesBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.deskQuoteBindingSource, "Price", true));
-            this.dispAllQuotesBox.DataSource = this.deskQuoteBindingSource;
-            this.dispAllQuotesBox.DisplayMember = "CustomerName";
             this.dispAllQuotesBox.FormattingEnabled = true;
-            this.dispAllQuotesBox.Location = new System.Drawing.Point(61, 68);
+            this.dispAllQuotesBox.ItemHeight = 16;
+            this.dispAllQuotesBox.Location = new System.Drawing.Point(81, 84);
+            this.dispAllQuotesBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dispAllQuotesBox.Name = "dispAllQuotesBox";
-            this.dispAllQuotesBox.Size = new System.Drawing.Size(412, 223);
+            this.dispAllQuotesBox.Size = new System.Drawing.Size(549, 274);
             this.dispAllQuotesBox.TabIndex = 0;
-            this.dispAllQuotesBox.ValueMember = "CustomerName";
             // 
             // deskQuoteBindingSource
             // 
@@ -54,14 +53,15 @@
             // 
             // ViewAllQuotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(534, 361);
+            this.ClientSize = new System.Drawing.Size(712, 444);
             this.Controls.Add(this.dispAllQuotesBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "ViewAllQuotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

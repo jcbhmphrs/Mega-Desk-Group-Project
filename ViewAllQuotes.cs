@@ -20,13 +20,22 @@ namespace Mega_Desk_Group_Project
             this.Location = mainMenu.Location;
             _mainMenu = mainMenu;
             _quoteList = quoteList;
-
-            dispAllQuotesBox.DataSource = _quoteList;
-            
-
+            //dispAllQuotesBox.DataSource = _quoteList;
+            SetUpDisplay(_quoteList);
         }
 
-
+        private void SetUpDisplay(List<DeskQuote> quoteList) 
+        {
+            // Create a loop that pulls the info from
+            // each object of the list.
+            foreach (DeskQuote quote in quoteList) 
+            {
+                // Compile the object data into string.
+                string fullQuote = $"{quote.Date.ToShortDateString()} {quote.CustomerName} | Width = {quote.Desk.Width} Depth = {quote.Desk.Depth} Drawers = {quote.Desk.DrawerCount} | ${quote.Price}";
+                
+                dispAllQuotesBox.Items.Add(fullQuote);
+            }
+        }
 
    
 
