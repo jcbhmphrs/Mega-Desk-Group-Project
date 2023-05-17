@@ -20,11 +20,11 @@ namespace Mega_Desk_Group_Project
             this.Location = mainMenu.Location;
             _mainMenu = mainMenu;
             _quoteList = quoteList;
-            //dispAllQuotesBox.DataSource = _quoteList;
-            SetUpDisplay(_quoteList);
+            dispQuotesBox.DataSource = _quoteList;
+            //SetUpDisplay(_quoteList);
         }
 
-        private void SetUpDisplay(List<DeskQuote> quoteList) 
+        /*private void SetUpDisplay(List<DeskQuote> quoteList) 
         {
             // Create a loop that pulls the info from
             // each object of the list.
@@ -32,10 +32,10 @@ namespace Mega_Desk_Group_Project
             {
                 // Compile the object data into string.
                 string fullQuote = $"{quote.Date.ToShortDateString()} {quote.CustomerName} | Order: {quote.RushOrder} | ${quote.Price}";
-                
-                dispAllQuotesBox.Items.Add(fullQuote);
+
+                dispQuotesBox.DataSource = (fullQuote);
             }
-        }
+        }*/
 
         private void ViewAllQuotes_FormClosed(object sender, FormClosedEventArgs e)
         {

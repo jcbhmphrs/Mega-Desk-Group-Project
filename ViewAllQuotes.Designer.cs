@@ -30,26 +30,59 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAllQuotes));
-            this.dispAllQuotesBox = new System.Windows.Forms.ListBox();
+            this.dispQuotesBox = new System.Windows.Forms.DataGridView();
             this.deskQuoteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rushOrderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dispQuotesBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deskQuoteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dispAllQuotesBox
+            // dispQuotesBox
             // 
-            this.dispAllQuotesBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dispAllQuotesBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.deskQuoteBindingSource, "Price", true));
-            this.dispAllQuotesBox.FormattingEnabled = true;
-            this.dispAllQuotesBox.ItemHeight = 16;
-            this.dispAllQuotesBox.Location = new System.Drawing.Point(81, 84);
-            this.dispAllQuotesBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dispAllQuotesBox.Name = "dispAllQuotesBox";
-            this.dispAllQuotesBox.Size = new System.Drawing.Size(549, 274);
-            this.dispAllQuotesBox.TabIndex = 0;
+            this.dispQuotesBox.AllowUserToAddRows = false;
+            this.dispQuotesBox.AutoGenerateColumns = false;
+            this.dispQuotesBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dispQuotesBox.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.customerNameDataGridViewTextBoxColumn,
+            this.rushOrderDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn});
+            this.dispQuotesBox.DataSource = this.deskQuoteBindingSource;
+            this.dispQuotesBox.Location = new System.Drawing.Point(64, 59);
+            this.dispQuotesBox.Name = "dispQuotesBox";
+            this.dispQuotesBox.RowHeadersWidth = 51;
+            this.dispQuotesBox.RowTemplate.Height = 24;
+            this.dispQuotesBox.Size = new System.Drawing.Size(579, 333);
+            this.dispQuotesBox.TabIndex = 1;
             // 
             // deskQuoteBindingSource
             // 
             this.deskQuoteBindingSource.DataSource = typeof(Mega_Desk_Group_Project.DeskQuote);
+            // 
+            // customerNameDataGridViewTextBoxColumn
+            // 
+            this.customerNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            // 
+            // rushOrderDataGridViewTextBoxColumn
+            // 
+            this.rushOrderDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.rushOrderDataGridViewTextBoxColumn.DataPropertyName = "RushOrder";
+            this.rushOrderDataGridViewTextBoxColumn.HeaderText = "RushOrder";
+            this.rushOrderDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.rushOrderDataGridViewTextBoxColumn.Name = "rushOrderDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             // 
             // ViewAllQuotes
             // 
@@ -58,7 +91,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(712, 444);
-            this.Controls.Add(this.dispAllQuotesBox);
+            this.Controls.Add(this.dispQuotesBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -67,14 +100,17 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ViewAllQuotes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ViewAllQuotes_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.dispQuotesBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deskQuoteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox dispAllQuotesBox;
         private System.Windows.Forms.BindingSource deskQuoteBindingSource;
+        private System.Windows.Forms.DataGridView dispQuotesBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rushOrderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
     }
 }
