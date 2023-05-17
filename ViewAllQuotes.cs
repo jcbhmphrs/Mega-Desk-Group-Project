@@ -27,6 +27,14 @@ namespace Mega_Desk_Group_Project
         {
             _mainMenu.Location = this.Location;
             _mainMenu.Show();
+        }      
+
+        private void dispQuotesBox_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DeskQuote focusedObj = _quoteList[e.RowIndex];
+            DisplayQuote displayQuote = new DisplayQuote(_mainMenu, this, focusedObj);
+            displayQuote.Show();
+            this.Hide();
         }
     }
 }

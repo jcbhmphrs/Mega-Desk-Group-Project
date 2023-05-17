@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAllQuotes));
             this.dispQuotesBox = new System.Windows.Forms.DataGridView();
-            this.deskQuoteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rushOrderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deskQuoteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dispQuotesBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deskQuoteBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -42,23 +42,24 @@
             // dispQuotesBox
             // 
             this.dispQuotesBox.AllowUserToAddRows = false;
+            this.dispQuotesBox.AllowUserToOrderColumns = true;
             this.dispQuotesBox.AutoGenerateColumns = false;
+            this.dispQuotesBox.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dispQuotesBox.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dispQuotesBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dispQuotesBox.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.customerNameDataGridViewTextBoxColumn,
             this.rushOrderDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn});
             this.dispQuotesBox.DataSource = this.deskQuoteBindingSource;
-            this.dispQuotesBox.Location = new System.Drawing.Point(64, 59);
+            this.dispQuotesBox.Location = new System.Drawing.Point(27, 34);
+            this.dispQuotesBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dispQuotesBox.Name = "dispQuotesBox";
             this.dispQuotesBox.RowHeadersWidth = 51;
             this.dispQuotesBox.RowTemplate.Height = 24;
-            this.dispQuotesBox.Size = new System.Drawing.Size(579, 333);
+            this.dispQuotesBox.Size = new System.Drawing.Size(481, 292);
             this.dispQuotesBox.TabIndex = 1;
-            // 
-            // deskQuoteBindingSource
-            // 
-            this.deskQuoteBindingSource.DataSource = typeof(Mega_Desk_Group_Project.DeskQuote);
+            this.dispQuotesBox.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dispQuotesBox_RowHeaderMouseDoubleClick);
             // 
             // customerNameDataGridViewTextBoxColumn
             // 
@@ -84,17 +85,20 @@
             this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             // 
+            // deskQuoteBindingSource
+            // 
+            this.deskQuoteBindingSource.DataSource = typeof(Mega_Desk_Group_Project.DeskQuote);
+            // 
             // ViewAllQuotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(712, 444);
+            this.ClientSize = new System.Drawing.Size(534, 361);
             this.Controls.Add(this.dispQuotesBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "ViewAllQuotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

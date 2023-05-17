@@ -14,20 +14,24 @@ namespace Mega_Desk_Group_Project
     {
         MainMenu _mainMenu { get; set; }    
         AddQuote _addQuote { get; set; }
+        ViewAllQuotes _viewAllQuotes { get; set; }
+        Form _parentForm { get; set; }
         Desk _desk { get; set; }
         string _rushOrder { get; set; }
 
 
-        public DisplayQuote(MainMenu mainmenu, AddQuote addQuote, DeskQuote deskQuote)
+        public DisplayQuote(MainMenu mainmenu, Form parentForm, DeskQuote deskQuote)
         {
             InitializeComponent();
-            this.Location = addQuote.Location;
+            this.Location = parentForm.Location;
             _mainMenu = mainmenu;
             _desk = deskQuote.Desk;
-            _addQuote = addQuote;
+            _addQuote = parentForm as AddQuote;
+            _viewAllQuotes = parentForm as ViewAllQuotes;
             dispCustomerName.Text = deskQuote.CustomerName;
             _rushOrder = deskQuote.RushOrder;
             decimal[] breakDown = deskQuote.GetPrice();
+            _parentForm = parentForm;
 
             dispDate.Text = DateTime.Now.ToShortDateString();
             dispBaseCost.Text = $"${breakDown[0].ToString()}";
@@ -45,8 +49,14 @@ namespace Mega_Desk_Group_Project
         private void DisplayQuote_FormClosed(object sender, FormClosedEventArgs e)
         {
             _mainMenu.Location = this.Location;
+            _parentForm.Location = this.Location;
+            if(_parentForm is ViewAllQuotes)
+            {                      
+                _parentForm.Show();
+                return;
+            }
             _mainMenu.Show();
-            _addQuote.Close();
+            _parentForm.Close();
         }
     }
 }
