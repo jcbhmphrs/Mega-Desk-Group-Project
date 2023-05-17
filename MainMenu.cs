@@ -60,7 +60,7 @@ namespace Mega_Desk_Group_Project
 
         private void btnSearchQuotes_Click(object sender, EventArgs e)
         {
-            SearchQuotes searchQuotes = new SearchQuotes(this);
+            SearchQuotes searchQuotes = new SearchQuotes(this, deskQuoteList);
             searchQuotes.Show();
             this.Hide();
         }
