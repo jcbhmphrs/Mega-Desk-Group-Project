@@ -33,7 +33,7 @@ namespace Mega_Desk_Group_Project
             decimal[] breakDown = deskQuote.GetPrice();
             _parentForm = parentForm;
 
-            dispDate.Text = DateTime.Now.ToShortDateString();
+            dispDate.Text = deskQuote.Date.ToShortDateString();
             dispBaseCost.Text = $"${breakDown[0].ToString()}";
             dispDrawersCost.Text = $"${breakDown[1].ToString()}";
             dispMaterialCost.Text = $"${breakDown[2].ToString()}";

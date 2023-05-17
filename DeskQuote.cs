@@ -10,18 +10,19 @@ namespace Mega_Desk_Group_Project
 {
     public class DeskQuote
     {
-        public DateTime Date = DateTime.Now;
+        public DateTime Date { get; set; }
         public string CustomerName { get; set; }
         public string RushOrder { get; set; }
         public Desk Desk { get; set; }
         public decimal Price { get; set; }
 
 
-        public DeskQuote(Desk desk, string customerName, string rushOrder)
+        public DeskQuote(Desk desk, string customerName, string rushOrder, DateTime timeOfCreation)
         {
             Desk = desk;
             CustomerName = customerName;
             RushOrder = rushOrder;
+            Date = timeOfCreation;
             GetPrice();
         }
 

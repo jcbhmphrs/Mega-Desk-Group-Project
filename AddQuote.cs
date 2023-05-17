@@ -31,13 +31,18 @@ namespace Mega_Desk_Group_Project
         private void btnGetQuote_Click(object sender, EventArgs e)
         {
             Desk desk = new Desk(deskMaterial.Text, int.Parse(deskWidth.Text), int.Parse(deskDepth.Text), int.Parse(deskDrawerCount.Text));
-            DeskQuote deskQuote = new DeskQuote(desk, customerName.Text.ToUpper(), rushOrder.Text);
+
+            var quoteInstanceTime = DateTime.Now;
+
+            DeskQuote deskQuote = new DeskQuote(desk, customerName.Text.ToUpper(), rushOrder.Text, quoteInstanceTime);
 
             //add object to list
             _mainMenu.deskQuoteList.Add(deskQuote);
 
             //Save DeskQuote to Json file
             SaveToJson(deskQuote);
+
+
             
             DisplayQuote displayQuote = new DisplayQuote(_mainMenu, this, deskQuote);
             displayQuote.Show();
