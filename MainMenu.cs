@@ -57,5 +57,12 @@ namespace Mega_Desk_Group_Project
             viewAllQuotes.Show();
             this.Hide();
         }
+
+        private void btnSearchQuotes_Click(object sender, EventArgs e)
+        {
+            SearchQuotes searchQuotes = new SearchQuotes(this);
+            searchQuotes.Show();
+            this.Hide();
+        }
     }
 }
