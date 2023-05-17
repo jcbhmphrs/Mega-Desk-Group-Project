@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAllQuotes));
             this.dispQuotesBox = new System.Windows.Forms.DataGridView();
-            this.deskQuoteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rushOrderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deskQuoteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dispQuotesBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deskQuoteBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -43,6 +43,7 @@
             // 
             this.dispQuotesBox.AllowUserToAddRows = false;
             this.dispQuotesBox.AutoGenerateColumns = false;
+            this.dispQuotesBox.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dispQuotesBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dispQuotesBox.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.customerNameDataGridViewTextBoxColumn,
@@ -55,10 +56,6 @@
             this.dispQuotesBox.RowTemplate.Height = 24;
             this.dispQuotesBox.Size = new System.Drawing.Size(579, 333);
             this.dispQuotesBox.TabIndex = 1;
-            // 
-            // deskQuoteBindingSource
-            // 
-            this.deskQuoteBindingSource.DataSource = typeof(Mega_Desk_Group_Project.DeskQuote);
             // 
             // customerNameDataGridViewTextBoxColumn
             // 
@@ -84,6 +81,10 @@
             this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             // 
+            // deskQuoteBindingSource
+            // 
+            this.deskQuoteBindingSource.DataSource = typeof(Mega_Desk_Group_Project.DeskQuote);
+            // 
             // ViewAllQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -94,7 +95,7 @@
             this.Controls.Add(this.dispQuotesBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "ViewAllQuotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

@@ -21,5 +21,10 @@ namespace Mega_Desk_Group_Project
             _quoteList = quoteList;
 
         }
+        private void SearchQuotes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _mainMenu.Location = this.Location;
+            _mainMenu.Show();
+        }
     }
 }
