@@ -31,11 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchQuotes));
             this.dispQuotesBox = new System.Windows.Forms.DataGridView();
-            this.deskQuoteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.searchQuotesSelect = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rushOrderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deskDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deskQuoteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dispQuotesBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deskQuoteBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -49,51 +50,68 @@
             this.dispQuotesBox.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.customerNameDataGridViewTextBoxColumn,
             this.rushOrderDataGridViewTextBoxColumn,
-            this.deskDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn});
             this.dispQuotesBox.DataSource = this.deskQuoteBindingSource;
-            this.dispQuotesBox.Location = new System.Drawing.Point(114, 55);
+            this.dispQuotesBox.Location = new System.Drawing.Point(114, 122);
             this.dispQuotesBox.Name = "dispQuotesBox";
             this.dispQuotesBox.RowHeadersWidth = 51;
             this.dispQuotesBox.RowTemplate.Height = 24;
-            this.dispQuotesBox.Size = new System.Drawing.Size(579, 333);
+            this.dispQuotesBox.Size = new System.Drawing.Size(579, 293);
             this.dispQuotesBox.TabIndex = 2;
             // 
-            // deskQuoteBindingSource
+            // searchQuotesSelect
             // 
-            this.deskQuoteBindingSource.DataSource = typeof(Mega_Desk_Group_Project.DeskQuote);
+            this.searchQuotesSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchQuotesSelect.FormattingEnabled = true;
+            this.searchQuotesSelect.Items.AddRange(new object[] {
+            "No Search",
+            "Oak",
+            "Laminate",
+            "Pine",
+            "Rosewood",
+            "Veneer"});
+            this.searchQuotesSelect.Location = new System.Drawing.Point(288, 74);
+            this.searchQuotesSelect.Name = "searchQuotesSelect";
+            this.searchQuotesSelect.Size = new System.Drawing.Size(354, 28);
+            this.searchQuotesSelect.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(148, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 28);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Search For:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // customerNameDataGridViewTextBoxColumn
             // 
+            this.customerNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
             this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
             this.customerNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
-            this.customerNameDataGridViewTextBoxColumn.Width = 125;
             // 
             // rushOrderDataGridViewTextBoxColumn
             // 
+            this.rushOrderDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.rushOrderDataGridViewTextBoxColumn.DataPropertyName = "RushOrder";
             this.rushOrderDataGridViewTextBoxColumn.HeaderText = "RushOrder";
             this.rushOrderDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.rushOrderDataGridViewTextBoxColumn.Name = "rushOrderDataGridViewTextBoxColumn";
-            this.rushOrderDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // deskDataGridViewTextBoxColumn
-            // 
-            this.deskDataGridViewTextBoxColumn.DataPropertyName = "Desk";
-            this.deskDataGridViewTextBoxColumn.HeaderText = "Desk";
-            this.deskDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.deskDataGridViewTextBoxColumn.Name = "deskDataGridViewTextBoxColumn";
-            this.deskDataGridViewTextBoxColumn.Width = 125;
             // 
             // priceDataGridViewTextBoxColumn
             // 
+            this.priceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
             this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // deskQuoteBindingSource
+            // 
+            this.deskQuoteBindingSource.DataSource = typeof(Mega_Desk_Group_Project.DeskQuote);
             // 
             // SearchQuotes
             // 
@@ -102,6 +120,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.searchQuotesSelect);
             this.Controls.Add(this.dispQuotesBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SearchQuotes";
@@ -116,10 +136,11 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dispQuotesBox;
+        private System.Windows.Forms.BindingSource deskQuoteBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rushOrderDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn deskDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource deskQuoteBindingSource;
+        private System.Windows.Forms.ComboBox searchQuotesSelect;
+        private System.Windows.Forms.Label label1;
     }
 }
