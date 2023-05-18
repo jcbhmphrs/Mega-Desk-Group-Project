@@ -38,21 +38,28 @@ namespace Mega_Desk_Group_Project
 
             // FOR CHRIS --  Try Catch on null selections very specific maybe never used line of code
 
-
-            // Convert to string.
-            string keyword = filterSelection.SelectedItem.ToString();
-
-            //grab each quote from the master list and add it to the sorted list
-            
-            foreach (DeskQuote quote in _quoteList)
+            try
             {
-                if (quote.Desk.Material == keyword)
+                // Convert to string.
+                string keyword = filterSelection.SelectedItem.ToString();
+                //grab each quote from the master list and add it to the sorted list
+            
+                foreach (DeskQuote quote in _quoteList)
                 {
-                    _sortedList.Add(quote);
-                }
-             }
+                    if (quote.Desk.Material == keyword)
+                    {
+                        _sortedList.Add(quote);
+                    }
+                 }
        
-             dispQuotesBox.DataSource = _sortedList;         
+                 dispQuotesBox.DataSource = _sortedList;         
+            }
+            catch(NullReferenceException)  
+            {
+                // Do nothing.
+                dispQuotesBox.DataSource = _quoteList;
+            }
+
         }
 
 
