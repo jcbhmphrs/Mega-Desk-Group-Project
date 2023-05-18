@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchQuotes));
             this.dispQuotesBox = new System.Windows.Forms.DataGridView();
-            this.searchQuotesSelect = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rushOrderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deskQuoteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.searchQuotesSelect = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dispQuotesBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deskQuoteBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -58,32 +58,6 @@
             this.dispQuotesBox.RowTemplate.Height = 24;
             this.dispQuotesBox.Size = new System.Drawing.Size(579, 293);
             this.dispQuotesBox.TabIndex = 2;
-            // 
-            // searchQuotesSelect
-            // 
-            this.searchQuotesSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchQuotesSelect.FormattingEnabled = true;
-            this.searchQuotesSelect.Items.AddRange(new object[] {
-            "No Search",
-            "Oak",
-            "Laminate",
-            "Pine",
-            "Rosewood",
-            "Veneer"});
-            this.searchQuotesSelect.Location = new System.Drawing.Point(288, 74);
-            this.searchQuotesSelect.Name = "searchQuotesSelect";
-            this.searchQuotesSelect.Size = new System.Drawing.Size(354, 28);
-            this.searchQuotesSelect.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(148, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 28);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Search For:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // customerNameDataGridViewTextBoxColumn
             // 
@@ -112,6 +86,33 @@
             // deskQuoteBindingSource
             // 
             this.deskQuoteBindingSource.DataSource = typeof(Mega_Desk_Group_Project.DeskQuote);
+            // 
+            // searchQuotesSelect
+            // 
+            this.searchQuotesSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchQuotesSelect.FormattingEnabled = true;
+            this.searchQuotesSelect.Items.AddRange(new object[] {
+            "Veneer",
+            "Oak",
+            "Laminate",
+            "Pine",
+            "Rosewood"});
+            this.searchQuotesSelect.Location = new System.Drawing.Point(288, 74);
+            this.searchQuotesSelect.Name = "searchQuotesSelect";
+            this.searchQuotesSelect.Size = new System.Drawing.Size(354, 28);
+            this.searchQuotesSelect.TabIndex = 3;
+            this.searchQuotesSelect.Text = "Desk Material";
+            this.searchQuotesSelect.SelectionChangeCommitted += new System.EventHandler(this.searchQuotesSelect_SelectionChangeCommitted);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(148, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 28);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Search For:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SearchQuotes
             // 
