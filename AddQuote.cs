@@ -24,7 +24,7 @@ namespace Mega_Desk_Group_Project
         {
             InitializeComponent();
             _mainMenu = mainMenu;
-            this.Location = mainMenu.Location;                    
+            Location = mainMenu.Location;                    
         }
 
 

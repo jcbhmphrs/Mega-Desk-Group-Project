@@ -13,8 +13,7 @@ namespace Mega_Desk_Group_Project
     public partial class DisplayQuote : Form
     {
         MainMenu _mainMenu { get; set; }    
-        AddQuote _addQuote { get; set; }
-        ViewAllQuotes _viewAllQuotes { get; set; }
+        AddQuote _addQuote { get; set; }     
         Form _parentForm { get; set; }
         Desk _desk { get; set; }
         string _rushOrder { get; set; }
@@ -26,8 +25,7 @@ namespace Mega_Desk_Group_Project
             this.Location = parentForm.Location;
             _mainMenu = mainmenu;
             _desk = deskQuote.Desk;
-            _addQuote = parentForm as AddQuote;
-            _viewAllQuotes = parentForm as ViewAllQuotes;
+            _addQuote = parentForm as AddQuote;            
             dispCustomerName.Text = deskQuote.CustomerName;
             _rushOrder = deskQuote.RushOrder;
             decimal[] breakDown = deskQuote.GetPrice();
@@ -52,6 +50,11 @@ namespace Mega_Desk_Group_Project
             _parentForm.Location = this.Location;
             if(_parentForm is ViewAllQuotes)
             {                      
+                _parentForm.Show();
+                return;
+            }
+            else if( _parentForm is SearchQuotes) 
+            {
                 _parentForm.Show();
                 return;
             }

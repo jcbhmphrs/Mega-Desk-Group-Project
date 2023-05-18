@@ -17,7 +17,7 @@ namespace Mega_Desk_Group_Project
         public ViewAllQuotes(MainMenu mainMenu, List<DeskQuote> quoteList)
         {
             InitializeComponent();
-            this.Location = mainMenu.Location;
+            Location = mainMenu.Location;
             _mainMenu = mainMenu;
             _quoteList = quoteList;
             dispQuotesBox.DataSource = _quoteList;
@@ -25,7 +25,7 @@ namespace Mega_Desk_Group_Project
 
         private void ViewAllQuotes_FormClosed(object sender, FormClosedEventArgs e)
         {
-            _mainMenu.Location = this.Location;
+            _mainMenu.Location = Location;
             _mainMenu.Show();
         }      
 
@@ -34,7 +34,7 @@ namespace Mega_Desk_Group_Project
             DeskQuote focusedObj = _quoteList[e.RowIndex];
             DisplayQuote displayQuote = new DisplayQuote(_mainMenu, this, focusedObj);
             displayQuote.Show();
-            this.Hide();
+            Hide();
         }
     }
 }

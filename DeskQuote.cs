@@ -14,7 +14,7 @@ namespace Mega_Desk_Group_Project
         public string CustomerName { get; set; }
         public string RushOrder { get; set; }
         public Desk Desk { get; set; }
-        public decimal Price { get; set; }
+        public string Price { get; set; }
 
 
         public DeskQuote(Desk desk, string customerName, string rushOrder, DateTime timeOfCreation)
@@ -50,7 +50,7 @@ namespace Mega_Desk_Group_Project
             //total price
             breakDown[5] = breakDown.Sum();
 
-            Price = breakDown.Sum();
+            Price = breakDown[5].ToString();
 
             return breakDown;
         }
