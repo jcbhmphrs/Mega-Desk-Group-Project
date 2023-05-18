@@ -52,12 +52,12 @@
             this.rushOrderDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn});
             this.dispQuotesBox.DataSource = this.deskQuoteBindingSource;
-            this.dispQuotesBox.Location = new System.Drawing.Point(27, 34);
-            this.dispQuotesBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dispQuotesBox.Location = new System.Drawing.Point(27, 70);
+            this.dispQuotesBox.Margin = new System.Windows.Forms.Padding(2);
             this.dispQuotesBox.Name = "dispQuotesBox";
             this.dispQuotesBox.RowHeadersWidth = 51;
             this.dispQuotesBox.RowTemplate.Height = 24;
-            this.dispQuotesBox.Size = new System.Drawing.Size(481, 292);
+            this.dispQuotesBox.Size = new System.Drawing.Size(480, 256);
             this.dispQuotesBox.TabIndex = 1;
             this.dispQuotesBox.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dispQuotesBox_RowHeaderMouseDoubleClick);
             // 

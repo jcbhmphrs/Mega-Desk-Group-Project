@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchQuotes));
             this.dispQuotesBox = new System.Windows.Forms.DataGridView();
-            this.searchQuotesSelect = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rushOrderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deskQuoteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.searchQuotesSelect = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dispQuotesBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deskQuoteBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -52,38 +52,13 @@
             this.rushOrderDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn});
             this.dispQuotesBox.DataSource = this.deskQuoteBindingSource;
-            this.dispQuotesBox.Location = new System.Drawing.Point(114, 122);
+            this.dispQuotesBox.Location = new System.Drawing.Point(27, 70);
+            this.dispQuotesBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dispQuotesBox.Name = "dispQuotesBox";
             this.dispQuotesBox.RowHeadersWidth = 51;
             this.dispQuotesBox.RowTemplate.Height = 24;
-            this.dispQuotesBox.Size = new System.Drawing.Size(579, 293);
+            this.dispQuotesBox.Size = new System.Drawing.Size(480, 256);
             this.dispQuotesBox.TabIndex = 2;
-            // 
-            // searchQuotesSelect
-            // 
-            this.searchQuotesSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchQuotesSelect.FormattingEnabled = true;
-            this.searchQuotesSelect.Items.AddRange(new object[] {
-            "No Search",
-            "Oak",
-            "Laminate",
-            "Pine",
-            "Rosewood",
-            "Veneer"});
-            this.searchQuotesSelect.Location = new System.Drawing.Point(288, 74);
-            this.searchQuotesSelect.Name = "searchQuotesSelect";
-            this.searchQuotesSelect.Size = new System.Drawing.Size(354, 28);
-            this.searchQuotesSelect.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(148, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 28);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Search For:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // customerNameDataGridViewTextBoxColumn
             // 
@@ -113,17 +88,46 @@
             // 
             this.deskQuoteBindingSource.DataSource = typeof(Mega_Desk_Group_Project.DeskQuote);
             // 
+            // searchQuotesSelect
+            // 
+            this.searchQuotesSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchQuotesSelect.FormattingEnabled = true;
+            this.searchQuotesSelect.Items.AddRange(new object[] {
+            "No Search",
+            "Oak",
+            "Laminate",
+            "Pine",
+            "Rosewood",
+            "Veneer"});
+            this.searchQuotesSelect.Location = new System.Drawing.Point(370, 23);
+            this.searchQuotesSelect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchQuotesSelect.Name = "searchQuotesSelect";
+            this.searchQuotesSelect.Size = new System.Drawing.Size(90, 24);
+            this.searchQuotesSelect.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(276, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 23);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Search For:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // SearchQuotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(534, 361);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.searchQuotesSelect);
             this.Controls.Add(this.dispQuotesBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SearchQuotes";
             this.Text = "SearchQuotes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SearchQuotes_FormClosed);
