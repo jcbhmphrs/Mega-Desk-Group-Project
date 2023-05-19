@@ -62,7 +62,7 @@ namespace Mega_Desk_Group_Project
 
         public bool VaraiableTest(string name, string order, string material)
         {
-            if ((name != "" && name != "CUSTOMER NAME") && order != "Select a Delivery Option" && material != "Select a Material")
+            if ((name != "" && name != "CUSTOMER NAME") && order != "" && material != "")
             {
                 return true;
             }
@@ -71,6 +71,10 @@ namespace Mega_Desk_Group_Project
                 return false;
             }
         }
+
+
+
+
 
         public void SaveToJson(DeskQuote deskQuote)
         {        
