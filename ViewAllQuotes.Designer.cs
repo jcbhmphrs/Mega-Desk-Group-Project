@@ -52,12 +52,12 @@
             this.priceDataGridViewTextBoxColumn,
             this.rushOrderDataGridViewTextBoxColumn});
             this.dispQuotesBox.DataSource = this.deskQuoteBindingSource;
-            this.dispQuotesBox.Location = new System.Drawing.Point(27, 70);
-            this.dispQuotesBox.Margin = new System.Windows.Forms.Padding(2);
+            this.dispQuotesBox.Location = new System.Drawing.Point(36, 86);
+            this.dispQuotesBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dispQuotesBox.Name = "dispQuotesBox";
             this.dispQuotesBox.RowHeadersWidth = 51;
             this.dispQuotesBox.RowTemplate.Height = 24;
-            this.dispQuotesBox.Size = new System.Drawing.Size(480, 256);
+            this.dispQuotesBox.Size = new System.Drawing.Size(640, 315);
             this.dispQuotesBox.TabIndex = 1;
             this.dispQuotesBox.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dispQuotesBox_RowHeaderMouseDoubleClick);
             // 
@@ -91,14 +91,15 @@
             // 
             // ViewAllQuotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(534, 361);
+            this.ClientSize = new System.Drawing.Size(712, 444);
             this.Controls.Add(this.dispQuotesBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "ViewAllQuotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

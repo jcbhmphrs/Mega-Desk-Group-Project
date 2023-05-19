@@ -30,27 +30,47 @@ namespace Mega_Desk_Group_Project
 
         private void btnGetQuote_Click(object sender, EventArgs e)
         {
-            Desk desk = new Desk(deskMaterial.Text, int.Parse(deskWidth.Text), int.Parse(deskDepth.Text), int.Parse(deskDrawerCount.Text));
 
-            var quoteInstanceTime = DateTime.Now;
+            if (VaraiableTest(customerName.Text.ToUpper(), rushOrder.Text, deskMaterial.Text))
+            {
+                Desk desk = new Desk(deskMaterial.Text, int.Parse(deskWidth.Text), int.Parse(deskDepth.Text), int.Parse(deskDrawerCount.Text));
 
-            DeskQuote deskQuote = new DeskQuote(desk, customerName.Text.ToUpper(), rushOrder.Text, quoteInstanceTime);
+                var quoteInstanceTime = DateTime.Now;
 
-            //add object to list
-            _mainMenu.deskQuoteList.Add(deskQuote);
+                DeskQuote deskQuote = new DeskQuote(desk, customerName.Text.ToUpper(), rushOrder.Text, quoteInstanceTime);
 
-            //Save DeskQuote to Json file
-            SaveToJson(deskQuote);
+                //add object to list
+                _mainMenu.deskQuoteList.Add(deskQuote);
 
+                //Save DeskQuote to Json file
+                SaveToJson(deskQuote);
 
+                DisplayQuote displayQuote = new DisplayQuote(_mainMenu, this, deskQuote);
+                displayQuote.Show();
+                this.Hide();
+
+            }
+            else
+            {
+                MessageBox.Show("Please Make sure that you have selected a material, a rush order and have chosen a customer name. ");
+            }
             
-            DisplayQuote displayQuote = new DisplayQuote(_mainMenu, this, deskQuote);
-            displayQuote.Show();
-            this.Hide();
+
         }
 
 
 
+        public bool VaraiableTest(string name, string order, string material)
+        {
+            if ((name != "" && name != "CUSTOMER NAME") && order != "Select a Delivery Option" && material != "Select a Material")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         public void SaveToJson(DeskQuote deskQuote)
         {        
@@ -67,11 +87,6 @@ namespace Mega_Desk_Group_Project
 
 
 
-        private void AddQuote_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            _mainMenu.Show();
-        }
-
         private void customerName_Enter(object sender, EventArgs e)
         {
             if(customerName.Text != null)
@@ -80,6 +95,12 @@ namespace Mega_Desk_Group_Project
                 customerName.SelectionLength = stringLength;
             }
         }
+
+        private void AddQuote_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _mainMenu.Show();
+        }
+
 
     }
 }
